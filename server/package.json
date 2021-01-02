@@ -17,10 +17,14 @@
     "express": "^4.17.1",
     "express-jwt": "^6.0.0",
     "express-validator": "^6.9.0",
+    "formidable": "^1.2.2",
     "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.20",
     "mongoose": "^5.11.9",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.6",
-    "shortid": "^2.2.16"
+    "shortid": "^2.2.16",
+    "slugify": "^1.4.6",
+    "string-strip-html": "^7.0.3"
   }
 }
