@@ -17,7 +17,6 @@ import {
   DropdownItem
 } from 'reactstrap';
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 
 const Header = () => {
@@ -31,7 +30,7 @@ const Header = () => {
     <div>
       <Navbar color="light" light expand="md">
         <Link href="/">
-          <NavLink className="font-weight-bold">{APP_NAME}</NavLink>
+          <NavLink className="font-weight-bold"  style={{ cursor: 'pointer' }}>{APP_NAME}</NavLink>
         </Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

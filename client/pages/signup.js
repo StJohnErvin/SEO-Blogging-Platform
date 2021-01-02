@@ -1,8 +1,6 @@
 import Layout from './components/Layout';
 import SignupComponent from './components/auth/SignupComponents';
 import Link from 'next/link';
-import React from 'react';
-import ReactDOM from 'react-dom';
 
 
 const Signup = () => {

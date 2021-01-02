@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { signin, authenticate } from '../../../actions/auth';
 import Router from 'next/router';
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 const SigninComponent = () => {
     const [values, setValues] = useState({

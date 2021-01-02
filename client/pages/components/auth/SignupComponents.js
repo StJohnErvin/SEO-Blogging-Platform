@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { signup } from '../../../actions/auth';
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 
 const SignupComponent = () => {
