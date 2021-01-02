@@ -1,13 +1,14 @@
-import { useState } from 'react';
-import { signup } from '../../../actions/auth';
+import { useState, useEffect } from 'react';
+import { signup,  isAuth  } from '../../../actions/auth';
 import React from 'react';
+import Router from 'next/router';
 
 
 const SignupComponent = () => {
     const [values, setValues] = useState({
-        name: 'Ervin',
-        email: 'johnervin.ceriola@outlook.com',
-        password: '123456',
+        name: '',
+        email: '',
+        password: '',
         error: '',
         loading: false,
         message: '',
@@ -16,8 +17,13 @@ const SignupComponent = () => {
 
     const { name, email, password, error, loading, message, showForm } = values;
 
+    useEffect(() => {
+        isAuth() && Router.push(`/`);
+    }, []);
+
     const handleSubmit = e => {
         e.preventDefault();
+        // console.table({ name, email, password, error, loading, message, showForm });
         setValues({ ...values, loading: true, error: false });
         const user = { name, email, password };
 

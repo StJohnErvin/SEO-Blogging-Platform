@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { signin, authenticate } from '../../../actions/auth';
+import { useState, useEffect  } from 'react';
+import { signin, authenticate, isAuth } from '../../../actions/auth';
 import Router from 'next/router';
 import React from 'react';
 
@@ -15,6 +15,10 @@ const SigninComponent = () => {
 
     const { email, password, error, loading, message, showForm } = values;
 
+    useEffect(() => {
+        isAuth() && Router.push(`/`);
+    }, []);
+
     const handleSubmit = e => {
         e.preventDefault();
         // console.table({ name, email, password, error, loading, message, showForm });
@@ -29,7 +33,11 @@ const SigninComponent = () => {
                 // save user info to localstorage
                 // authenticate user
                 authenticate(data, () => {
-                    Router.push(`/`);
+                    if (isAuth() && isAuth().role === 1) {
+                        Router.push(`/admin`);
+                    } else {
+                        Router.push(`/user`);
+                    }
                 });
             }
         });

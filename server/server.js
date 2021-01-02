@@ -8,13 +8,16 @@ require('dotenv').config();
 // bring routes
 const blogRoutes = require('./routes/blog');
 const authRoutes = require('./routes/auth');
+const userRoutes = require('./routes/user');
+const categoryRoutes = require('./routes/category');
+const tagRoutes = require('./routes/tag');
 
 // app
 const app = express();
 
 // db
 mongoose
-    .connect(process.env.DATABASE, { useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false,  useUnifiedTopology: true })
+    .connect(process.env.DATABASE, { useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false })
     .then(() => console.log('DB connected'))
     .catch(err => {
         console.log(err);
@@ -31,6 +34,9 @@ if (process.env.NODE_ENV === 'development') {
 // routes middleware
 app.use('/api', blogRoutes);
 app.use('/api', authRoutes);
+app.use('/api', userRoutes);
+app.use('/api', categoryRoutes);
+app.use('/api', tagRoutes);
 
 // port
 const port = process.env.PORT || 8000;
