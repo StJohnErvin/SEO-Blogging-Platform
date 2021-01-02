@@ -1,1 +1,1 @@
-#SEO Blogging Platform
+SEO Blogging Platform
