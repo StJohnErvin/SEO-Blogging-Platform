@@ -5,6 +5,7 @@ import { getCookie } from '../../../actions/auth';
 import { create, getCategories, removeCategory } from '../../../actions/category';
 import React from "react";
 
+
 const Category = () => {
     const [values, setValues] = useState({
         name: '',

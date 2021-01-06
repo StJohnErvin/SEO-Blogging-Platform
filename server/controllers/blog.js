@@ -53,7 +53,6 @@ exports.create = (req, res) => {
         blog.mtitle = `${title} | ${process.env.APP_NAME}`;
         blog.mdesc = stripHtml(body.substring(0, 160));
         blog.postedBy = req.user._id;
-
         // categories and tags
         let arrayOfCategories = categories && categories.split(',');
         let arrayOfTags = tags && tags.split(',');
@@ -74,7 +73,6 @@ exports.create = (req, res) => {
                     error: errorHandler(err)
                 });
             }
-            
             // res.json(result);
             Blog.findByIdAndUpdate(result._id, { $push: { categories: arrayOfCategories } }, { new: true }).exec(
                 (err, result) => {
