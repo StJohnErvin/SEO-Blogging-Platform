@@ -23,7 +23,6 @@ const SignupComponent = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        // console.table({ name, email, password, error, loading, message, showForm });
         setValues({ ...values, loading: true, error: false });
         const user = { name, email, password };
 
