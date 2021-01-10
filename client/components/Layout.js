@@ -3,10 +3,10 @@ import React from 'react';
 
 const Layout = ({ children }) => {
     return (
-        <React.Fragment>
+        <>
             <Header />
             {children}
-        </React.Fragment>
+        </>
     );
 };
 

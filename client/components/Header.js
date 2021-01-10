@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Router from 'next/router';
-import { APP_NAME } from '../../config';
-import { signout, isAuth } from '../../actions/auth';
+import { APP_NAME } from '../config';
+import { signout, isAuth } from '../actions/auth';
 import {
   Collapse,
   Navbar,
@@ -16,7 +16,7 @@ import {
   DropdownMenu,
   DropdownItem
 } from 'reactstrap';
-import React from 'react';
+
 
 
 const Header = () => {
@@ -36,7 +36,7 @@ const Header = () => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             {!isAuth() && (
-              <React.Fragment>
+              <>
                 <NavItem>
                   <Link href="/signin">
                     <NavLink style={{ cursor: 'pointer' }} >Signin</NavLink>
@@ -47,7 +47,7 @@ const Header = () => {
                     <NavLink style={{ cursor: 'pointer' }}>Signup</NavLink>
                   </Link>
                 </NavItem>
-              </React.Fragment>
+              </>
             )}
 
             {isAuth() && (

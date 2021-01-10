@@ -1,5 +1,5 @@
-import Layout from './components/Layout';
-import SignupComponent from './components/auth/SignupComponents';
+import Layout from '../components/Layout';
+import SignupComponent from '../components/auth/SignupComponents';
 import Link from 'next/link';
 
 

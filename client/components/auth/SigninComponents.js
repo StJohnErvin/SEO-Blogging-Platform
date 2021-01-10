@@ -1,5 +1,5 @@
 import { useState, useEffect  } from 'react';
-import { signin, authenticate, isAuth } from '../../../actions/auth';
+import { signin, authenticate, isAuth } from '../../actions/auth';
 import Router from 'next/router';
 import React from 'react';
 
